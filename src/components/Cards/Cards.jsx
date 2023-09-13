@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import Card from "./Card/Card";
 
+
 const Cards = ({hadleAddToList}) => {
 
     const [actors,setActors] = useState([]);
