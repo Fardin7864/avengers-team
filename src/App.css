@@ -1,4 +1,9 @@
 
 .bg-img{
-   background-image: url('assets/avengers.jpg'); 
+   background-image: url('assets/avengers.jpg');
+   background-size: cover;
+   background-repeat: no-repeat;
+   /* background-position: center; */
+   inset: 0;
+   position: fixed;
 }
