@@ -1,8 +1,9 @@
-import { useState,useEffect } from 'react'
+import { useState } from 'react'
 import './App.css'
 import Cards from './components/Cards/Cards'
 import Cart from './components/Cart/Cart'
 import Header from './components/Header/Header'
+import AutoDismissalAlert from './components/Alert/Alert'
 
 function App() {
 
@@ -20,7 +21,7 @@ function App() {
     }
     else{
         setIsVisible(true)
-             // Automatically hide the alert after 3 seconds
+     // Automatically hide the alert after 3 seconds
       setTimeout(() => {
         setIsVisible(false);
       }, 3000);
@@ -34,7 +35,6 @@ function App() {
       <AutoDismissalAlert isVisible={isVisible}></AutoDismissalAlert>
       <div className=''>
       <Header></Header>
-
       <div className='flex gap-4'>
       <div className='p-4 w-2/3'>
         <Cards
@@ -53,26 +53,5 @@ function App() {
 
 
 
-const AutoDismissalAlert = ({isVisible,setIsVisible}) => {
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsVisible(false);
-    }, 1500);
-
-    return () => {
-      clearTimeout(timer);
-    };
-  }, []);
-
-  return (
-    <>
-      {isVisible && (
-        <div className={`fixed top-0 right-0 m-4 p-4 bg-blue-500 text-white rounded-lg shadow-lg fade-out-animation`}>
-          <p>You are out of budget!</p>
-        </div>
-      )}
-    </>
-  );
-};
 
 export default App
