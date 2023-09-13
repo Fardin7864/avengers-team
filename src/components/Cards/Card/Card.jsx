@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-const Card = ({actor}) => {
+const Card = ({actor,hadleAddToList}) => {
     const {name,role,salary,career_details,image} = actor;
     return (
         <div className="w-full bg-transparent border border-gray-200 rounded-lg drop-shadow-2xl dark:bg-gray-800 dark:border-gray-700">
@@ -13,7 +13,7 @@ const Card = ({actor}) => {
             <span className="text-sm text-white dark:text-gray-400 font-semibold">Salary: ${salary}</span>
             </div>
           <div className="flex mt-4 space-x-3 md:mt-6">
-            <a href="#" className="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add friend</a>
+            <button onClick={() => hadleAddToList(actor)} className="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add To list</button>
           </div>
         </div>
       </div>
@@ -25,7 +25,8 @@ Card.propTypes = {
     name: PropTypes.string,
     role: PropTypes.string,
     salary: PropTypes.number,
-    career_details: PropTypes.string
+    career_details: PropTypes.string,
+    hadleAddToList: PropTypes.func.isRequired
 };
 
 export default Card;

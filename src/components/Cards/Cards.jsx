@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import Card from "./Card/Card";
 
-const Cards = () => {
+const Cards = ({hadleAddToList}) => {
 
     const [actors,setActors] = useState([]);
     useEffect(()=>
@@ -20,6 +20,7 @@ const Cards = () => {
                 <Card
                 key={actor.id}
                 actor={actor}
+                hadleAddToList ={hadleAddToList}
                 ></Card>)
             }
         </div>
